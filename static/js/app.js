@@ -2,7 +2,7 @@
 function DataPlots(id) {
 
     // read in JSON files
-    d3.json('samples.json').then(data =>{
+    d3.json('data/samples.json').then(data =>{
 
         console.log(data)
 
@@ -80,7 +80,7 @@ function DataPlots(id) {
 function DemoData(id) {
 
     // Read in JSON files
-    d3.json('samples.json').then ((data)=>{
+    d3.json('data/samples.json').then ((data)=>{
 
         // get metadata info for demopgraphic panel
         var metadata = data.metadata;
@@ -107,7 +107,7 @@ function DemoData(id) {
 
 // create function for the change event
 function optionChanged(id) {
-    getPlots(id);
+    DataPlots(id);
     DemoData(id);
 
 }
@@ -117,7 +117,7 @@ function init() {
     var dropdown = d3.select("#selDataset");
 
     // read JSON data
-    d3.json("samples.json").then((data)=> {
+    d3.json('data/samples.json').then((data)=> {
 
         console.log(data)
 
